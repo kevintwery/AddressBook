@@ -1,0 +1,105 @@
+
+.contact-details-container {
+  height: 90vh;
+  width: 100vw;
+  border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 1280px){
+    //desktop
+    width: 49vw;
+  }
+  .profile-picture{
+    height: 100px;
+    width: 100px;
+  }
+  .contact-row-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 75vh;
+    @media screen and (min-width: 1280px){
+      //desktop
+      width: 25vw;
+    }
+
+    .contact-information {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      height: 100%;
+      .name-container {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        .first-name, .last-name {
+          margin: 5px;
+        }
+      }
+
+      .phone-number-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+        overflow-y: scroll;
+        .contact-type-Work {
+          color: red;
+        }
+        .contact-type-Cell {
+          color: blue;
+        }
+        .contact-type-Home {
+          color: green;
+        }
+        .phone-number {
+        }
+      }
+    }
+  }
+
+  .create-contact-form {
+    height: 75vh;
+    width: 100vw;
+    border: black 1px solid;
+    position: inherit;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
+    background-color: aliceblue;
+
+    @media screen and (min-width: 1280px) {
+      //desktop
+      width: 49vw;
+      left: 25vw;
+    }
+
+    .contact-photo {
+      height: 100px;
+      width: 100px;
+    }
+
+    .phone-number-scrolling-container {
+      overflow-y: scroll;
+
+      .phone-number-container {
+        overflow-y: hidden;
+        margin: 5px;
+      }
+    }
+  }
+
+}
