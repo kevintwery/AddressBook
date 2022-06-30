@@ -1,0 +1,50 @@
+<div class="contact-details-container">
+  <div class="empty-message">Click on a contact to view their details</div>
+  <div *ngIf="!isEditMode">
+    <div class="contact-row-container contact-number-{{openContact.id}}">
+      <img class="profile-picture" src="assets/images/profilePicturePlaceholder.jpg">
+      <div class="contact-information">
+        <div class="name-container">
+          <img src="{{openContact.img}}">
+          <div class="first-name">{{openContact.firstName}}</div>
+          <div class="last-name">{{openContact.lastName}}</div>
+          <div class="company-name">{{openContact.companyName}}</div>
+        </div>
+        <div class="phone-number-container">
+          <div *ngFor="let phoneNumberObject of openContact.phoneNumbers"
+               class="phone-number contact-type-{{phoneNumberObject.type}}">{{phoneNumberObject.phoneNumber}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <form class="create-contact-form" *ngIf="isEditMode">
+    <img class="contact-photo" src="/assets/images/profilePicturePlaceholder.jpg">
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" name="first-name" required value="{{openContact.firstName}}">
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="last-name" required value="{{openContact.lastName}}">
+    <label for="company-name">Company Name:</label>
+    <input type="text" id="company-name" name="company-name" value="{{openContact.companyName}}">
+    <label for="phone-number">Phone Number(s):</label>
+    <div class="phone-number-scrolling-container">
+      <div class="phone-number-container" *ngFor="let phoneNumber of openContact.phoneNumbers">
+        <input type="text" id="phone-number" name="phone-number" required value="{{phoneNumber.phoneNumber}}">
+        <select class="phone-number-type">
+          <option class="work-phone-number">Work</option>
+          <option class="cell-phone-number">Cell</option>
+          <option class="home-phone-number">Home</option>
+        </select>
+        <button class="make-primary-button" type="submit">make primary</button>
+      </div>
+    </div>
+    <!--    <button class="add-new-phone-number" (click)="addNewPhoneNumber()">Add new phone number</button>-->
+    <div class="create-contact-save-cancel-button-container">
+      <button class="create-contact-save-button" (click)="saveContactChanges()">Save</button>
+      <button class="create-contact-cancel-button" (click)="changeToNonEditMode()">Cancel</button>
+    </div>
+  </form>
+
+  <button class="delete-button">Delete</button>
+  <button class="edit-button" (click)="changeToEditMode()">Edit</button>
+</div>

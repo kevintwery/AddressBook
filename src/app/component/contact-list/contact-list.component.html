@@ -1,0 +1,9 @@
+<div class="contact-list-container">
+  <div class="empty-contact-list-message" *ngIf="contacts.length===0">
+    While single player games are great; games are more fun with friends!
+  </div>
+
+  <contact-row *ngFor="let contact of contacts" [contact]="contact"></contact-row>
+  <button class="create-new-contact-button" role="button" (click)="addNewContact()">Create new contact</button>
+
+</div>
