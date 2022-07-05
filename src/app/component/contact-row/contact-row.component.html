@@ -1,15 +1,13 @@
-<div class="contact-row-container contact-number-{{contact.id}}" (click)="openContactDetails($event)">
-  <img class="profile-picture" src="assets/images/profilePicturePlaceholder.jpg">
+<div class="contact-row-container contact-number-{{contact.id}}">
+  <img class="profile-picture" alt="profile picture" src="{{contact.profilePicturePath}}">
   <div class="contact-information">
     <div class="name-container">
-      <img src="{{contact.img}}">
       <div class="first-name">{{contact.firstName}}</div>
       <div class="last-name">{{contact.lastName}}</div>
       <div class="company-name">{{contact.companyName}}</div>
     </div>
     <div class="phone-number-container">
-      <div *ngFor="let phoneNumberObject of contact.phoneNumbers"
-           class="phone-number contact-type-{{phoneNumberObject.type}}">{{phoneNumberObject.phoneNumber}}</div>
+      <div class="phone-number contact-type-{{primaryPhoneNumber.type}}">{{primaryPhoneNumber.phoneNumber}}</div>
     </div>
   </div>
 </div>

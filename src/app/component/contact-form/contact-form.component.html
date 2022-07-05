@@ -1,27 +1,29 @@
-<form class="create-contact-form" (click)="preventEventBubbling($event)">
-  <img class="contact-photo" src="/assets/images/profilePicturePlaceholder.jpg">
-  <div class="salutation">Add your new friend here!</div>
-  <label for="first-name">First Name:</label>
-  <input type="text" id="first-name" name="first-name" required>
-  <label for="last-name">Last Name:</label>
-  <input type="text" id="last-name" name="last-name" required>
-  <label for="company-name">Company Name:</label>
-  <input type="text" id="company-name" name="company-name">
-  <label for="phone-number">Phone Number(s):</label>
-  <div class="phone-number-scrolling-container">
-    <div class="phone-number-container" *ngFor="let phoneNumber of phoneNumberRows">
-      <input type="text" id="phone-number" name="phone-number" required>
-      <select class="phone-number-type">
-        <option>Work</option>
-        <option>Cell</option>
-        <option>Home</option>
-      </select>
-      <button class="make-primary-button" type="submit">make primary</button>
-    </div>
-  </div>
-  <button class="add-new-phone-number" (click)="addNewPhoneNumber()">Add new phone number</button>
-  <div class="create-contact-save-cancel-button-container">
-    <button class="create-contact-save-button" (click)="saveNewContact()">Save</button>
-    <button class="create-contact-cancel-button" (click)="hideCreateContactModal()">Cancel</button>
-  </div>
-</form>
+<!--<form class="create-contact-form" (click)="preventEventBubbling($event)">-->
+<!--  <img class="contact-photo" src="/assets/images/profilePicturePlaceholder.jpg">-->
+<!--  <div class="salutation">Add your new friend here!</div>-->
+<!--  <label for="first-name">First Name:</label>-->
+<!--  <input type="text" id="first-name" name="first-name" required>-->
+<!--  <label for="last-name">Last Name:</label>-->
+<!--  <input type="text" id="last-name" name="last-name" required>-->
+<!--  <label for="company-name">Company Name:</label>-->
+<!--  <input type="text" id="company-name" name="company-name">-->
+<!--  <label for="phone-number">Phone Number(s):</label>-->
+<!--  <div class="phone-number-scrolling-container">-->
+<!--    <div class="phone-number-container" *ngFor="let phoneNumber of phoneNumberRows; let phoneNumberIndex = index">-->
+<!--      <input type="text" id="phone-number" name="phone-number" required>-->
+<!--      <select class="phone-number-type">-->
+<!--        <option>Work</option>-->
+<!--        <option>Cell</option>-->
+<!--        <option>Home</option>-->
+<!--      </select>-->
+<!--      <button class="make-primary-button" type="button" (click)="markPhoneNumberAsPrimary($event)">make primary</button>-->
+<!--      <button class="remove-new-phone-number-{{phoneNumberIndex}}" *ngIf="phoneNumberRows.length > 1" type="button"-->
+<!--              (click)="removeNewPhoneNumber(phoneNumberIndex)">X</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button class="add-new-phone-number" type="button" (click)="addNewPhoneNumber()">Add new phone number</button>-->
+<!--  <div class="create-contact-save-cancel-button-container">-->
+<!--    <button class="create-contact-save-button" type="submit" (click)="saveNewContact()">Save</button>-->
+<!--    <button class="create-contact-cancel-button" type="button" (click)="hideCreateContactModal()">Cancel</button>-->
+<!--  </div>-->
+<!--</form>-->

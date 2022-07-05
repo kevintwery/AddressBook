@@ -1,7 +1,7 @@
 <page-header></page-header>
 
 <div class="content" role="main">
-  <contact-list></contact-list>
-  <contact-details></contact-details>
+  <contact-list (contactClicked)="updateContactDetails()"></contact-list>
+  <contact-details [openContact]="openContact"></contact-details>
   <create-contact></create-contact>
 </div>

@@ -1,1 +1,5 @@
-<p>profile-picture works!</p>
+<div class="profile-picture-selector">
+  <img class="profile-picture1 selected" (click)="selectProfilePicture($event)" src="assets/images/profilePicturePlaceholder.jpg" alt="default profile picture">
+  <img class="profile-picture2" (click)="selectProfilePicture($event)" src="assets/images/maleProfilePicture.jpg" alt="male profile picture">
+  <img class="profile-picture3" (click)="selectProfilePicture($event)" src="assets/images/femaleProfilePicture.jpg" alt="female profile picture">
+</div>

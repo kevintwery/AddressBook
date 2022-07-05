@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'contact-row',
@@ -7,26 +7,17 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ContactRowComponent implements OnInit {
   @Input() contact: any;
-  constructor() { }
+  @Output() contactClicked:EventEmitter<any> = new EventEmitter();
+  public primaryPhoneNumber: {phoneNumber: string,type:string, isPrimary:boolean};
 
-  ngOnInit(): void {
+  constructor() {
   }
 
-  openContactDetails(event: Event){
-    let parsedContacts;
-    let parsedContactIndex;
-    let target = event.currentTarget as HTMLElement;
-    target.classList.forEach(htmlElementClass => {
-      if(htmlElementClass.includes('contact-number')){
-        let contacts = localStorage.getItem('contacts');
-        if(contacts){
-          parsedContacts = JSON.parse(contacts);
-          parsedContactIndex = htmlElementClass.substring('contact-number-'.length);
-        }
+  ngOnInit(): void {
+    this.contact.phoneNumbers.forEach((phoneNumber:{phoneNumber: string,type:string, isPrimary:boolean})=>{
+      if(phoneNumber.isPrimary){
+        this.primaryPhoneNumber = phoneNumber;
       }
-    });
-    if(parsedContacts && parsedContactIndex) {
-      localStorage.setItem('openContact', JSON.stringify(parsedContacts[parsedContactIndex]));
-    }
+    })
   }
 }

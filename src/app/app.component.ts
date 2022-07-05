@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  public openContact: any;
 
   constructor() {
-    if(localStorage.getItem('contacts')===null) {
-      localStorage.setItem('contacts', '[]')
-    }
+
+  }
+
+  updateContactDetails(){
+    this.openContact = JSON.parse(localStorage.getItem('openContact'));
   }
 }

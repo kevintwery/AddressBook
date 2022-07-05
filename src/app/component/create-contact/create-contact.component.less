@@ -34,4 +34,44 @@
   .create-contact-save-cancel-button-container {
     z-index:300;
   }
+  .create-contact-form {
+    height: 75vh;
+    width: 100vw;
+    border: black 1px solid;
+    position: inherit;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
+    background-color: aliceblue;
+
+    @media screen and (min-width: 1280px) {
+      //desktop
+      width: 49vw;
+      left: 25vw;
+    }
+
+    .contact-photo {
+      height: 100px;
+      width: 100px;
+    }
+    //.no-primary-phone-number{
+    //  display: none;
+    //  color: red;
+    //}
+    .phone-number-scrolling-container {
+      overflow-y: scroll;
+
+      .phone-number-container {
+        overflow-y: hidden;
+        margin: 5px;
+        &.primary {
+          border: greenyellow 2px solid;
+        }
+      }
+    }
+  }
+
 }

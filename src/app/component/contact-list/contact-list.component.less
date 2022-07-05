@@ -2,14 +2,16 @@
 @media (min-width: 576px) {
   //phone
 }
-@media screen and (min-width: 768px){
+
+@media screen and (min-width: 768px) {
   //tablet
 }
-@media screen and (min-width: 1280px){
+
+@media screen and (min-width: 1280px) {
   //desktop
 }
 
-.contact-list-container{
+.contact-list-container {
   height: 100vh - 10vh; //TODO change to variable to correspond to header height
   width: 100vw;
   border: black 1px solid;
@@ -17,24 +19,32 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (min-width: 1280px){
+  overflow-y: scroll;
+  padding: 10px;
+  @media screen and (min-width: 1280px) {
     //desktop
     width: 49vw;
+    .detailedWindowOpen {
+      width: 49vw;
+    }
   }
   contact-row {
     margin-bottom: 5px;
   }
+
   .empty-contact-list-message {
     margin: 10px;
-
   }
+
   .create-new-contact-button {
     width: 100px;
     height: 50px;
     margin-top: 10px;
   }
+
   .make-primary-button {
     width: 50px;
     height: 25px;
   }
+
 }

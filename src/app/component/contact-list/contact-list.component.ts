@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'contact-list',
@@ -7,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
   public contacts;
+  @Output() contactClicked:EventEmitter<any> = new EventEmitter();
+
   constructor() {
     let contacts = localStorage.getItem('contacts');
     if(contacts){
@@ -24,7 +26,23 @@ export class ContactListComponent implements OnInit {
       createContactFormElement.style.display = 'flex';
     }
   }
-  openContactDetails(): void {
-
+  openContactDetails(event: Event) {
+    let parsedContacts;
+    let parsedContactIndex;
+    let target = event.currentTarget as HTMLElement;
+    target.classList.forEach(htmlElementClass => {
+      if (htmlElementClass.includes('contact-id-')) {
+        let contacts = localStorage.getItem('contacts');
+        if (contacts) {
+          parsedContacts = JSON.parse(contacts);
+          parsedContactIndex = htmlElementClass.substring('contact-id-'.length);
+        }
+      }
+    });
+    if (parsedContacts && parsedContactIndex) {
+      localStorage.setItem('openContact', JSON.stringify(parsedContacts[parsedContactIndex]));
+    }
+    document.querySelector('contact-list').classList.add('detailedWindowOpen')
+    this.contactClicked.emit();
   }
 }
