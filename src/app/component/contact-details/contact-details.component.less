@@ -11,6 +11,12 @@
     //desktop
     width: 49vw;
   }
+  .return-to-contact-list-mobile {
+    display: flex;
+    @media screen and (min-width: 1280px) {
+      display: none;
+    }
+  }
   .profile-picture{
     height: 100px;
     width: 100px;
@@ -60,9 +66,12 @@
           color: blue;
         }
         .contact-type-Home {
-          color: green;
+          color: darkorange;
         }
         .phone-number {
+        }
+        .primary {
+          border: 2px solid greenyellow;
         }
       }
     }

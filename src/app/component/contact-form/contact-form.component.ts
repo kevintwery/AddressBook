@@ -11,9 +11,6 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addNewPhoneNumber(): void {
-    this.phoneNumberRows.push(1)
-  }
 
   preventEventBubbling(event: Event): void {
     event.stopPropagation();
@@ -52,4 +49,26 @@ export class ContactFormComponent implements OnInit {
       createContactFormElement.style.display = 'none';
     }
   }
+  markPhoneNumberAsPrimary(event: Event): void {
+    let phoneNumberContainers = document.querySelectorAll<HTMLInputElement>('.phone-number-container');
+    phoneNumberContainers.forEach((phoneNumber) => {
+      if (phoneNumber.classList.contains('primary')) {
+        phoneNumber.classList.remove('primary')
+      }
+    })
+
+    let clickedElement = event.target as HTMLElement;
+    let parentOfClickElement = clickedElement.parentNode as HTMLElement;
+    parentOfClickElement.classList.add('primary');
+    event.stopPropagation();
+  }
+
+  addNewPhoneNumber(): void {
+    this.phoneNumberRows.push(this.phoneNumberRows.length)
+  }
+
+  removeNewPhoneNumber(indexToRemove: number): void {
+    this.phoneNumberRows.splice(indexToRemove,1);
+  }
+
 }
