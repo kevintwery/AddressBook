@@ -50,7 +50,8 @@
       <button class="create-contact-cancel-button" type="button" (click)="changeToNonEditMode()">Cancel</button>
     </div>
   </form>
-
-  <button class="delete-button" *ngIf="openContact" type="button" (click)="deleteContact()">Delete</button>
-  <button class="edit-button" *ngIf="openContact" type="button" (click)="changeToEditMode()">Edit</button>
+  <div class="delete-edit-container">
+    <button class="delete-button" *ngIf="openContact" type="button" (click)="deleteContact()">Delete</button>
+    <button class="edit-button" *ngIf="openContact" type="button" (click)="changeToEditMode()">Edit</button>
+  </div>
 </div>

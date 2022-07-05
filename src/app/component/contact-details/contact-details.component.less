@@ -1,15 +1,18 @@
-
+@import '../../buttons-styles/button-styles.less';
 .contact-details-container {
   height: 90vh;
   width: 100vw;
-  border: black 1px solid;
+  border: #e5ddd8 1px solid;
+  border-radius: 20px;
+  background-color: #fffaf3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @media screen and (min-width: 1280px){
     //desktop
-    width: 49vw;
+    width: 30vw;
+    margin: 10px;
   }
   .return-to-contact-list-mobile {
     display: flex;
@@ -24,14 +27,19 @@
   .contact-row-container {
     display: flex;
     flex-direction: row;
-    align-content: center;
     align-items: center;
-    justify-content: center;
     width: 50vw;
     height: 75vh;
+    border: #e0e8ff 1px solid;
+    background-color: lightcyan;
+    border-radius: 20px;
+    justify-content: center;
+    margin: 2px;
     @media screen and (min-width: 1280px){
       //desktop
       width: 25vw;
+      height: 50vh;
+      margin: 20px;
     }
 
     .contact-information {
@@ -41,6 +49,10 @@
       justify-content: center;
       width: 80%;
       height: 100%;
+      @media screen and (min-width: 1280px){
+        //desktop
+        width: 50%;
+      }
       .name-container {
         display: flex;
         flex-direction: row;
@@ -74,6 +86,10 @@
           border: 2px solid greenyellow;
         }
       }
+    }
+    .delete-edit-container {
+      width: 100px;
+      display: flex;
     }
   }
 
