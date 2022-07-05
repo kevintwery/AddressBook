@@ -8,7 +8,6 @@ import { ContactListComponent } from './component/contact-list/contact-list.comp
 import { CreateContactComponent } from './component/create-contact/create-contact.component';
 import { ContactDetailsComponent } from './component/contact-details/contact-details.component';
 import { ProfilePictureComponent } from './component/elements/profile-picture/profile-picture.component';
-import {ContactFormComponent} from "./component/contact-form/contact-form.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import {ContactFormComponent} from "./component/contact-form/contact-form.compon
     CreateContactComponent,
     ContactDetailsComponent,
     ProfilePictureComponent,
-    ContactFormComponent
   ],
   imports: [
     BrowserModule
